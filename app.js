@@ -9,7 +9,7 @@ app.use(express.json());
 
 mongoose.set('strictQuery',false);
 
-mongoose.connect("mongodb+srv://paramesh:paramesh@cluster0.hl1zdom.mongodb.net/tests?retryWrites=true&w=majority").then(()=>{
+mongoose.connect("mongodb+srv://paramesh:paramesh@cluster0.hl1zdom.mongodb.net/test?retryWrites=true&w=majority").then(()=>{
     console.log('DB Connected');
 });
 
