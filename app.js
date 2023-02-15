@@ -37,9 +37,18 @@ app.post('/signup',async (req,res)=>{
 
 
 
-app.get('/',(req,res)=>{
-    res.send('Hello World');
-    res.end();
+app.get('/', async (req,res)=>{
+    try{
+        const exist = await user.find();
+        if(!exist){
+            return res.status(400).send('No data found')
+        }
+        return res.status(200).send(exist)
+    }
+    catch(err){
+        console.log(err);
+        return res.status(500).send('network error')
+    }
 });
 
 app.listen(8080,()=>console.log('server running...'));
