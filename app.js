@@ -51,4 +51,4 @@ app.get('/', async (req,res)=>{
     }
 });
 
-app.listen(8080,()=>console.log('server running...'));
+app.listen(8000,()=>console.log('server running...'));
